@@ -16,14 +16,33 @@ export const Menu = ({ jump, respawn, collidedValue, collided }) => {
   const [coins, setCoins] = useState(100);
   const [scoreValue, setScoreValue] = useState(null);
   const isThrowButtonDisabled = !selectedOption;
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
 
   const handleBetChange = (event) => {
-    setBetAmount(parseInt(event.target.value, 10) || 0);
+    const newBetAmount = parseInt(event.target.value, 10) || 0;
+    setBetAmount(newBetAmount);
+
+    // Check for insufficient coins here
+    if (newBetAmount > coins) {
+      setErrorMessage("Not enough coins!");
+    } else {
+      setErrorMessage(null); // Clear any previous error message
+    }
   };
+
+  // const handleBetChange = (event) => {
+  //   setBetAmount(parseInt(event.target.value, 10) || 0);
+  // };
+
+  // const displayError = () => {
+  //   if (betAmount > coins) {
+  //     setErrorMessage("Not enough coins!");
+  //   }
+  // };
 
   const checkResult = (option, value) => {
     const isLow = value <= 9;
@@ -115,8 +134,8 @@ export const Menu = ({ jump, respawn, collidedValue, collided }) => {
           <div className="input-container">
             <input
               type="tel"
-              min="0"
               value={betAmount}
+              min={0}
               onChange={handleBetChange}
               style={{
                 width: "100px",
@@ -160,13 +179,15 @@ export const Menu = ({ jump, respawn, collidedValue, collided }) => {
               onClick={() => {
                 handlePlayAgain(1);
                 startGame();
+                // displayError();
                 setIsThrowButtonVisible(true);
               }}
-              disabled={isThrowButtonDisabled}
+              disabled={isThrowButtonDisabled || betAmount > coins}
             >
               bet
             </button>
           </div>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
           <br />
         </div>
         <br />
