@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&display=swap");
+
+/* #root {
+  width: 100vw;
+  height: 100vh;
+} 
+*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 450px;
+  width: 100%;
+}
+
+/*
+Login.css ,signup.css
+*/
+
+.login,
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  height: 100vh;
+  flex-direction: column;
+
+  background-image: url("/src/assets/images/72ppi/BG_01.png");
+  background-repeat: no-repeat;
+  background-size: 450px auto;
+  background-attachment: scroll;
+  margin: 50% auto;
+}
+
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.text {
+  margin-top: -11px;
+}
+
+.input {
+  border: none;
+  padding: 1rem;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+/*
+Form-related
+*/
+
+.form-card {
+  background-color: #eb3f43;
+  display: block;
+  padding: 1rem;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  background-image: url("./src/assets/images/72ppi/Line02.png"),
+    url("./src/assets/images/72ppi/Line01.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top right,
+    bottom;
+  background-size: auto, auto;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+}
+
+.input-container input,
+.form button {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  margin: 8px 0;
+}
+
+.input-container input {
+  background-color: #fff;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.input-container span {
+  display: grid;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  place-content: center;
+}
+
+.input-container span svg {
+  color: #9ca3af;
+  width: 1rem;
+  height: 1rem;
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 108px;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: url("./src/assets/images/72ppi/Line03.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+}
+
+.play-button {
+  /* display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; */
+  background-color: #eb3f43;
+  color: #ffffff;
+  font-size: 0.875rem;
+  /* line-height: 1.25rem; */
+  /* font-weight: 500; */
+  width: 108px;
+  text-transform: uppercase;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  background-image: url("./src/assets/images/72ppi/Line02.png"),
+    url("./src/assets/images/72ppi/Line01.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top right,
+    bottom;
+  background-size:
+    16% 25%,
+    100% 16%;
+
+  position: absolute;
+  top: 80%;
+  width: auto;
+  height: auto;
+}
+
+.signup-link {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: underline;
+}
+
+.keta-logo {
+  width: 75%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+Menu.jsx
+*/
+
+.menu,
+.scores {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px); */
+  transition: all 1s ease-in-out;
+}
+
+.menu-heading {
+  color: #f1f1f1;
+  align-items: center;
+  align-self: center;
+}
+
+.menu--hidden,
+.scores--hidden,
+.button--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 16px 32px;
+  border: none;
+  transition: background-color 0.4s;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.menu button {
+  transition: opacity 0.3s ease;
+}
+
+.menu button:not(:last-child) {
+  margin-right: 10px;
+}
+
+/*
+win,lost and menu cards
+*/
+
+.win-card {
+  transition: 200ms ease-in-out;
+}
+
+.lost-card {
+  transition: 200ms ease-in-out;
+}
+
+.win-card,
+.lost-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-message h1,
+.result-message h6 {
+  margin-bottom: 10px;
+}
+
+.lost-image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-card {
+  position: relative;
+  background-color: #326086;
+  padding: 1em;
+  z-index: 5;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  max-width: 300px;
+  transition: 200ms ease-in-out;
+  text-align: center;
+}
+
+.menu-input {
+  border: none;
+  padding: 0.7rem;
+  border-radius: 3rem;
+  background: #e8e8e8;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.menu-input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow:
+    inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+.high-menu-button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  align-items: center;
+  height: 48px;
+  width: 150px;
+  font-weight: 600;
+  padding: 0 1.2rem;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  background-color: #ffffff;
+}
+
+.low-menu-button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  align-items: center;
+  height: 48px;
+  width: 150px;
+  font-weight: 600;
+  padding: 0 1.2rem;
+  color: #eb3f43;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.high-menu-button:disabled,
+.low-menu-button:disabled {
+  background-color: grey;
+  opacity: 0.6; /* Slightly faded look */
+  cursor: default; /* Indicates the button is not clickable */
+}
+
+.throw-menu-button {
+  font-family: sans-serif;
+  font-size: 1rem;
+  align-items: center;
+  height: 30px;
+  width: 75px;
+  border-radius: 3rem;
+  font-weight: 600;
+  padding: 0 1.2rem;
+  color: #afc7ed;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  background-color: #f86666;
+  text-align: center;
+}
+
+/*
+Button Container
+*/
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/*
+Coins, coin bars
+*/
+
+.user-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.redbar,
+.coin-display,
+.coin {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  left: calc(50vw - 150px);
+  width: 100px;
+}
+
+.redbar {
+  height: 35px;
+}
+
+.coin-display {
+  color: #fff;
+  left: calc(50vw - 120px);
+}
+
+.coin {
+  height: 100px;
+  left: calc(50vw - 200px);
+  top: 0px;
+}
+
+/*
+Error message
+*/
+
+.error-message {
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
