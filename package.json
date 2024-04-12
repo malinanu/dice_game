@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"cd client && npx vite\" \"npm run start --prefix Server\""
+  }
+  
+  
+  
+}
