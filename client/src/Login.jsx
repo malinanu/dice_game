@@ -36,7 +36,7 @@ function Login() {
         }
       })
       .catch((err) => console.log(err));
-    setErrorMessage("Invalid email or password!");
+    setErrorMessage("Something went wrong!");
   };
 
   return (
