@@ -64,7 +64,7 @@ app.get("/home", (req, res) => {
   }
 });
 
-app.post("/login", async (req, res) => {
+app.post("/", async (req, res) => {
   const { email, password } = req.body;
 
   try {

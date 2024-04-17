@@ -120,7 +120,7 @@ function Signup() {
         </button>
         <p className="signup-link">
           Already have an account?
-          <Link to="/login" className="signup-link">
+          <Link to="/" className="signup-link">
             Login
           </Link>
         </p>

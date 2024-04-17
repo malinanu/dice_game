@@ -15,7 +15,7 @@ function Home() {
         if (res.data.valid) {
           setEmail(res.data.email);
         } else {
-          navigate("/login");
+          navigate("/");
         }
       })
       .catch((err) => console.log(err));

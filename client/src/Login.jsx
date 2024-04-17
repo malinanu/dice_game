@@ -19,7 +19,7 @@ function Login() {
         if (res.data.valid) {
           navigate("/home");
         } else {
-          navigate("/login");
+          navigate("/");
         }
       })
       .catch((err) => console.log(err));
@@ -28,7 +28,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5003/login", { email, password })
+      .post("http://localhost:5003/", { email, password })
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {

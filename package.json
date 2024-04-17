@@ -1,9 +1,9 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^8.2.2"
   },
   "scripts": {
-    "start": "concurrently \"cd client && npm install && npx vite\" \"npm install && npm  start --prefix Server\""
+    "start": "concurrently \"cd client && npm install && npx vite build && npx vite preview\" \"npm install && npm start --prefix Server\""
   }
   
   
